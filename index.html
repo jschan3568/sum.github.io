@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  background-color: #808080;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #92a8d1;
+  padding: 10px;
+}
+</style>
+</head>
+
+
+
+<body>
+<div class="center">
+<h2>Random Number Sum</h2>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<br>
+Enter your answer
+<br><br>
+<input type="text" id="userInput"=>
+</input>
+<br><br>
+<button class="button" onclick="myFunction()">Start</button>   <button class="button" onclick="test()">Submit</button>   <button onClick="window.location.reload();">Refresh Page</button>
+<p id="demo"></p>
+<p id="demon"></p>
+</div>
+
+
+<script>
+var z,x,y;
+var n;
+var i = 0;
+let arr = new Array();
+
+function myFunction() {
+x = Math.floor(Math.random() * 10);
+y = Math.floor(Math.random() * 10);
+z = (x + y)%10;
+var d = new Date();
+n = d.getSeconds();
+document.getElementById("demo1").innerHTML= x;
+document.getElementById("demo2").innerHTML= y;
+document.getElementById("demo3").innerHTML= n;
+}
+
+function test(){
+var userInput = document.getElementById("userInput").value;
+var d = new Date();
+var n1 = d.getSeconds();
+var text = "correct";
+var text1 = "wrong";
+if (userInput == z){
+document.getElementById("demo").innerHTML = text;
+}
+else{
+document.getElementById("demo").innerHTML = text1;
+var userInput = document.getElementById("userInput").value='';
+test();}
+var time = n1-n;
+if(n1<n)
+arr[i] = 60-time + '<br/>';
+else
+arr[i] = time +'<br/>';
+i++;
+if (i < 5){
+var userInput = document.getElementById("userInput").value='';
+myFunction();}
+else{
+document.getElementById("demon").innerHTML = arr;}
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- add this line for function to write into -->
+   
+
